@@ -6,9 +6,9 @@ import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:taskati/Core/Colors.dart';
 import 'package:taskati/Core/CustomButton.dart';
-import 'package:taskati/Core/CustomTextFeald.dart';
+import 'package:taskati/features/Add%20Task/Widget/CustomTextFeald.dart';
 import 'package:taskati/Core/TextStyle.dart';
-import 'package:taskati/features/Home.dart';
+import 'package:taskati/features/home/Home.dart';
 
 String? path;
 String? name = '';
@@ -56,7 +56,7 @@ class _UploadState extends State<Upload> {
             },
             child: Text(
               'Done',
-              style: getSmollStyle(
+              style: getSmallStyle(
                 fontSize: 16,
                 color: AppColor.primary,
                 fontWeight: FontWeight.w600,

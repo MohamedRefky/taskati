@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskati/Core/Colors.dart';
 
-
 TextStyle getTitleStyle(context,
     {double? fontSize, Color? color, FontWeight? fontWeight}) {
   return TextStyle(
