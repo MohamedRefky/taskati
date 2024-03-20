@@ -1,25 +1,25 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:taskati/Core/Colors.dart';
-import 'package:taskati/Core/TextStyle.dart';
+import 'package:taskati/Core/utils/Colors.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/data/task_model.dart';
 import 'package:taskati/features/home/presentation/widgets/home_header.dart';
+import 'package:taskati/features/home/presentation/widgets/task_item.dart';
 import 'package:taskati/features/home/presentation/widgets/today_header.dart';
-import 'package:taskati/features/home/widget/Task_item.dart';
 
-
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeViewState extends State<HomeView> {
   String _selectedValue = DateFormat("dd/MM/yyyy").format(DateTime.now());
   @override
   Widget build(BuildContext context) {
@@ -141,7 +141,7 @@ class _HomeState extends State<Home> {
                               box.delete(tasks[index].id);
                             }
                           },
-                          child: Task_Item(
+                          child: TaskItem(
                             model: tasks[index],
                           ),
                         );

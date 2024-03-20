@@ -1,13 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:taskati/Core/Colors.dart';
-import 'package:taskati/Core/TextStyle.dart';
-import 'package:taskati/Core/utils/colors.dart';
-
-
+import 'package:taskati/Core/utils/TextStyle.dart';
+import 'package:taskati/Core/utils/Colors.dart';
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
 
@@ -77,18 +73,18 @@ class _ProfileViewState extends State<ProfileView> {
                     children: [
                       Text(
                         name,
-                        style: getTitleStyle(context, color: AppColors.primary),
+                        style: getTitleStyle(context, color: AppColor.primary),
                       ),
                       const Spacer(),
                       InkWell(
                         onTap: () {},
                         child: CircleAvatar(
                           radius: 18,
-                          backgroundColor: AppColors.primary,
+                          backgroundColor: AppColor.primary,
                           child: CircleAvatar(
                               radius: 17,
                               backgroundColor: theme.background,
-                              foregroundColor: AppColors.primary,
+                              foregroundColor: AppColor.primary,
                               child: const Icon(Icons.edit)),
                         ),
                       ),

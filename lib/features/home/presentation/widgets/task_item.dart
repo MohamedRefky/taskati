@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:taskati/Core/Colors.dart';
-import 'package:taskati/Core/utils/colors.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
+import 'package:taskati/Core/utils/Colors.dart';
 import 'package:taskati/data/task_model.dart';
-
-import '../../../../Core/TextStyle.dart';
-
 class TaskItem extends StatelessWidget {
   const TaskItem({
     super.key,
@@ -26,9 +23,9 @@ class TaskItem extends StatelessWidget {
               color: model.color == 0
                   ? AppColor.primary
                   : model.color == 1
-                      ? AppColors.orange
+                      ? AppColor.orange
                       : model.color == 2
-                          ? AppColors.red
+                          ? AppColor.red
                           : Colors.green,
               borderRadius: BorderRadius.circular(15)),
           child: Row(
@@ -40,21 +37,21 @@ class TaskItem extends StatelessWidget {
                     Text(
                       model.title,
                       style: getTitleStyle(context,
-                          color: AppColors.white, fontSize: 16),
+                          color: AppColor.white, fontSize: 16),
                     ),
                     const Gap(5),
                     Row(
                       children: [
                         Icon(
                           Icons.watch_later_outlined,
-                          color: AppColors.white,
+                          color: AppColor.white,
                           size: 18,
                         ),
                         const Gap(7),
                         Text(
                           '${model.startTime} : ${model.endTime}',
                           style: getSmallStyle(
-                            color: AppColors.white,
+                            color: AppColor.white,
                           ),
                         )
                       ],
@@ -65,7 +62,7 @@ class TaskItem extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: getBodyStyle(context,
-                          color: AppColors.white, fontSize: 16),
+                          color: AppColor.white, fontSize: 16),
                     )
                   ],
                 ),
@@ -81,7 +78,7 @@ class TaskItem extends StatelessWidget {
                 child: Text(
                   model.isComplete ? 'COMPLETED' : 'TODO',
                   style: getBodyStyle(context,
-                      color: AppColors.white, fontSize: 16),
+                      color: AppColor.white, fontSize: 16),
                 ),
               )
             ],

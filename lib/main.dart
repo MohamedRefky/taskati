@@ -6,16 +6,15 @@ import 'package:taskati/data/task_model.dart';
 import 'package:taskati/features/Splash/splash.dart';
 
 
-
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox('user');
   Hive.registerAdapter(TaskModelAdapter());
   await Hive.openBox<TaskModel>('task');
-  AppLocalStorage().init();
+  var appLocalStorage = AppLocalStorage();
+  await appLocalStorage.init();
   runApp(const MainApp());
 }
-
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -30,7 +29,7 @@ class MainApp extends StatelessWidget {
           // LIGHT
           theme: AppThemes.appLightTheme,
           // DARK
-          //darkTheme: AppThemes.appDarkTheme,
+          darkTheme: AppThemes.appDarkTheme,
           debugShowCheckedModeBanner: false,
           home: const SplashView(),
         );

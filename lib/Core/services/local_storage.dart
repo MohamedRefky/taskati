@@ -1,6 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:taskati/data/task_model.dart';
-
 class AppLocalStorage {
   static late Box box;
   static late Box<TaskModel> taskBox;

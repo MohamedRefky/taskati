@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:taskati/Core/Function/routing.dart';
-import 'package:taskati/Core/TextStyle.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/Core/widgets/custom_mini_button.dart';
-import 'package:taskati/features/Add%20Task/AddTask.dart';
-
+import 'package:taskati/features/add-task/presentaion/view/add_task_view.dart';
 
 class TodayHeader extends StatelessWidget {
   const TodayHeader({

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
-import 'package:taskati/Core/Colors.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
+import 'package:taskati/Core/utils/Colors.dart';
 import 'package:taskati/Core/Function/routing.dart';
-import 'package:taskati/Core/TextStyle.dart';
 import 'package:taskati/Core/services/local_storage.dart';
 import 'package:taskati/Core/widgets/custom_mini_button.dart';
 import 'package:taskati/data/task_model.dart';
 import 'package:taskati/features/home/presentation/view/home_view.dart';
-
-
 class AddTaskView extends StatefulWidget {
   const AddTaskView({super.key, this.model});
   final TaskModel? model;
@@ -71,9 +69,7 @@ class _AddTaskViewState extends State<AddTaskView> {
             TextFormField(
               controller: titleController,
               decoration: const InputDecoration(hintText: 'Enter Task Title'),
-              // inputFormatters: [
-              //   LengthLimitingTextInputFormatter(10),
-              // ],
+             
             ),
             const Gap(10),
             Text(
@@ -104,30 +100,7 @@ class _AddTaskViewState extends State<AddTaskView> {
                   initialDate: DateTime.now(),
                   firstDate: DateTime.now(),
                   lastDate: DateTime(
-                      DateTime.now().add(const Duration(days: 365)).year),
-                  // builder: (context, child) {
-                  //   return Theme(
-                  //     data: ThemeData(
-                  //       // dialogBackgroundColor: AppColors.black,
-                  //       datePickerTheme: DatePickerThemeData(
-                  //           headerForegroundColor: theme.onSurface,
-                  //           yearForegroundColor:
-                  //               MaterialStatePropertyAll(theme.primary)),
-                  //       colorScheme: ColorScheme.fromSeed(
-                  //           primary: theme.primary, // header background color
-                  //           onPrimary: theme.primary, // header text color
-                  //           onSurface: theme.primary,
-                  //           seedColor: theme.background // body text color
-                  //           ),
-                  //       textButtonTheme: TextButtonThemeData(
-                  //         style: TextButton.styleFrom(
-                  //           foregroundColor: theme.primary, // button text color
-                  //         ),
-                  //       ),
-                  //     ),
-                  //     child: child!,
-                  //   );
-                  // },
+                      DateTime.now().add(const Duration(days: 365)).year)
                 ).then((value) {
                   if (value != null) {
                     setState(() {

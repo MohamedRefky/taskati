@@ -27,11 +27,7 @@ class _UploadViewState extends State<UploadView> {
         actions: [
           TextButton(
               onPressed: () {
-                // check image and name
-                // is done
-                // no image
-                // no name
-                // no name and no image
+              
                 if (path != null && name.isNotEmpty) {
                   // cache data and navigate
                   AppLocalStorage.cacheData('name', name);

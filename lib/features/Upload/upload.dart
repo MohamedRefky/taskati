@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:taskati/Core/Colors.dart';
+import 'package:taskati/Core/utils/Colors.dart';
 import 'package:taskati/Core/CustomButton.dart';
 import 'package:taskati/features/Add%20Task/Widget/CustomTextFeald.dart';
-import 'package:taskati/Core/TextStyle.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/features/home/Home.dart';
 
 String? path;
@@ -35,7 +35,7 @@ class _UploadState extends State<Upload> {
                 box.put('IsUplooad', true);
                 box.get(name);
                 Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => const Home(),
+                  builder: (context) => const HomeView(),
                 ));
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     backgroundColor: AppColor.primary,

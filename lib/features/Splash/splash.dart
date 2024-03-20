@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
 import 'package:taskati/Core/Function/routing.dart';
-import 'package:taskati/Core/TextStyle.dart';
+import 'package:taskati/Core/services/local_storage.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/Core/constants/assets_images.dart';
-import 'package:taskati/Services/local_Storge.dart';
 import 'package:taskati/features/Upload/upload.dart';
 import 'package:taskati/features/home/Home.dart';
 
@@ -23,7 +23,7 @@ class _SplashViewState extends State<SplashView> {
     bool isUpload = AppLocalStorage.getCachedData('isUpload') ?? false;
     Future.delayed(const Duration(seconds: 3), () {
       navigateWithReplacment(
-          context, (isUpload) ? const Home() : const Upload());
+          context, (isUpload) ? const HomeView() : const Upload());
     });
   }
 

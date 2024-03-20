@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:taskati/Core/Function/routing.dart';
-import 'package:taskati/Core/TextStyle.dart';
+import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/Core/services/local_storage.dart';
-import 'package:taskati/Core/utils/colors.dart';
+import 'package:taskati/Core/utils/Colors.dart';
+
 import 'package:taskati/features/profile/presentation/view/profile_view.dart';
 
 
@@ -37,7 +37,7 @@ class _HomeHeaderState extends State<HomeHeader> {
           children: [
             Text(
               'Hello, ${name.isEmpty ? '' : name}',
-              style: getTitleStyle(context, color: AppColors.primary),
+              style: getTitleStyle(context, color: AppColor.primary),
             ),
             Text(
               'Have A Nice Day.',
