@@ -73,7 +73,7 @@ class _HomeViewState extends State<HomeView> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Lottie.asset('assets/empty.json', width: 250),
+                            Lottie.asset('assets/emptyTask.json', width: 250),
                             const Gap(20),
                             const Text('No Tasks Today'),
                           ],
