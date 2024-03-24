@@ -34,15 +34,15 @@ class _HomeHeaderState extends State<HomeHeader> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            FutureBuilder(
-              future: AppLocal.getData(AppLocal.Name_Key),
-              builder: (context, snapshot) {
-                return Text(
-                  'Hello,${snapshot.data?.split('').first}',
-                  style: getTitleStyle(context, color: AppColor.primary),
-                );
-              },
-            ),
+            // FutureBuilder(
+            //   future: AppLocal.getData(AppLocal.Name_Key),
+            //   builder: (context, snapshot) {
+            //     return Text(
+            //       'Hello,${snapshot.data?.split('').first}',
+            //       style: getTitleStyle(context, color: AppColor.primary),
+            //     );
+            //   },
+            // ),
             Text(
               'Hello, ${name.isEmpty ? '' : name}',
               style: getTitleStyle(context, color: AppColor.primary),
