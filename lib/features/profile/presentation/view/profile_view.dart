@@ -17,7 +17,7 @@ class _ProfileViewState extends State<ProfileView> {
     final theme = Theme.of(context).colorScheme;
 
     final box = Hive.box('user');
-    var darkMode = box.get('darkMode');
+    var darkMode = box.get('darkMode')??false;
     return Scaffold(
       appBar: AppBar(
         foregroundColor: AppColor.primary,
@@ -27,7 +27,7 @@ class _ProfileViewState extends State<ProfileView> {
               box.put('darkMode', !darkMode);
             },
             icon: Icon(
-              darkMode ? Icons.sunny : Icons.dark_mode_rounded,
+              darkMode ? Icons.sunny : Icons.dark_mode_rounded ,
             ),
           ),
         ],

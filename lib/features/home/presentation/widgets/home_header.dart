@@ -1,12 +1,11 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:taskati/Core/Function/routing.dart';
-import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/Core/services/local_storage.dart';
 import 'package:taskati/Core/utils/Colors.dart';
-
+import 'package:taskati/Core/utils/TextStyle.dart';
 import 'package:taskati/features/profile/presentation/view/profile_view.dart';
-
 
 class HomeHeader extends StatefulWidget {
   const HomeHeader({
@@ -35,6 +34,15 @@ class _HomeHeaderState extends State<HomeHeader> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            FutureBuilder(
+              future: AppLocal.getData(AppLocal.Name_Key),
+              builder: (context, snapshot) {
+                return Text(
+                  'Hello,${snapshot.data?.split('').first}',
+                  style: getTitleStyle(context, color: AppColor.primary),
+                );
+              },
+            ),
             Text(
               'Hello, ${name.isEmpty ? '' : name}',
               style: getTitleStyle(context, color: AppColor.primary),
@@ -63,3 +71,5 @@ class _HomeHeaderState extends State<HomeHeader> {
     );
   }
 }
+
+class $ {}

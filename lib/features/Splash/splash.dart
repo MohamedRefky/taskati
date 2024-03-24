@@ -4,10 +4,8 @@ import 'package:lottie/lottie.dart';
 import 'package:taskati/Core/Function/routing.dart';
 import 'package:taskati/Core/services/local_storage.dart';
 import 'package:taskati/Core/utils/TextStyle.dart';
-import 'package:taskati/Core/constants/assets_images.dart';
 import 'package:taskati/features/Upload/upload.dart';
 import 'package:taskati/features/home/Home.dart';
-
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -34,8 +32,10 @@ class _SplashViewState extends State<SplashView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(
-              AssetImages.appIcon,
+            SizedBox(
+              width: 200,
+              height: 200,
+              child: Lottie.asset('assets/Logo.json'),
             ),
             const Gap(20),
             Text(

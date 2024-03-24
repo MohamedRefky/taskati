@@ -54,7 +54,7 @@ class _HomeViewState extends State<HomeView> {
                   });
                 },
               ),
-
+          
               // list of tasks
               const Gap(20),
               Expanded(
@@ -67,7 +67,6 @@ class _HomeViewState extends State<HomeView> {
                         tasks.add(element);
                       }
                     }
-
                     if (tasks.isEmpty) {
                       return Center(
                         child: Column(

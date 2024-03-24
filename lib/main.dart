@@ -5,16 +5,18 @@ import 'package:taskati/Core/themes/theme.dart';
 import 'package:taskati/data/task_model.dart';
 import 'package:taskati/features/Splash/splash.dart';
 
-
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  await Hive.openBox('user');
   Hive.registerAdapter(TaskModelAdapter());
+  await Hive.openBox('user');
   await Hive.openBox<TaskModel>('task');
+  await Hive.openBox<bool>('model');
   var appLocalStorage = AppLocalStorage();
   await appLocalStorage.init();
   runApp(const MainApp());
 }
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
